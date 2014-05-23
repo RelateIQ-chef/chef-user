@@ -45,6 +45,7 @@ default['user']['ssh_keygen']         = "true"
 default['user']['non_unique']         = "false"
 
 default['user']['data_bag_name']        = "users"
+default['user']['data_bag_name_files']  = "user_files"
 default['user']['user_array_node_attr'] = "users"
 
 default[default['user']['user_array_node_attr']] = []
