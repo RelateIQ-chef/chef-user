@@ -47,7 +47,7 @@ Array(user_array).each do |i|
 
 	bash "include_global_bashrc_#{username}" do
 		code <<-EOC
-			echo "if [ -f /etc/bashrc ]; then . /etc/bashrc; fi" >> /home/#{username}/.bashrc
+			echo "if [ -f /etc/bashrc ] && [ -d /home/#{username} ]; then . /etc/bashrc; fi" >> /home/#{username}/.bashrc
 		EOC
 		not_if "grep -q /etc/bashrc /home/#{username}/.bashrc"
 	end
